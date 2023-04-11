@@ -1,0 +1,107 @@
+{
+  "road1": {
+    "top": "R",
+    "bottom": "R",
+    "right": "N",
+    "left": "N",
+    "center": "R"
+  },
+  "road2": {
+    "top": "R",
+    "bottom": "R",
+    "right": "R",
+    "left": "R",
+    "center": "R"
+  },
+  "road4": {
+    "top": "N",
+    "bottom": "R",
+    "right": "R",
+    "left": "R",
+    "center": "R"
+  },
+  "road5": {
+    "top": "N",
+    "bottom": "N",
+    "right": "R",
+    "left": "R",
+    "center": "R"
+  },
+  "road6": {
+    "top": "N",
+    "bottom": "R",
+    "right": "R",
+    "left": "N",
+    "center": "R"
+  },
+  "road7": {
+    "top": "R",
+    "bottom": "N",
+    "right": "N",
+    "left": "R",
+    "center": "R"
+  },
+  "road8": {
+    "top": "R",
+    "bottom": "N",
+    "right": "R",
+    "left": "R",
+    "center": "R"
+  },
+  "road9": {
+    "top": "N",
+    "bottom": "R",
+    "right": "N",
+    "left": "R",
+    "center": "R"
+  },
+  "castle3": {
+    "top": "C",
+    "bottom": "C",
+    "right": "C",
+    "left": "C",
+    "center": "C"
+  },
+  "castle4": {
+    "top": "N",
+    "bottom": "C",
+    "right": "N",
+    "left": "C",
+    "center": "C"
+  },
+  "castle5": {
+    "top": "N",
+    "bottom": "C",
+    "right": "C",
+    "left": "N",
+    "center": "C"
+  },
+  "castle6": {
+    "top": "N",
+    "bottom": "C",
+    "right": "C",
+    "left": "C",
+    "center": "C"
+  },
+  "castle7": {
+    "top": "N",
+    "bottom": "N",
+    "right": "C",
+    "left": "N",
+    "center": "C"
+  },
+  "church1": {
+    "top": "N",
+    "bottom": "N",
+    "right": "N",
+    "left": "N",
+    "center": "J"
+  },
+  "field1": {
+    "top": "N",
+    "bottom": "N",
+    "right": "N",
+    "left": "N",
+    "center": "N"
+  }
+}
