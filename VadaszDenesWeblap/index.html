@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="hu-HU">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Felhasználó kézikönyv</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <script>
+
+        function copyrightTimer() {
+            const idieiEv = new Date();
+            document.body.style.maxWidth = window.innerWidth - 200;
+            document.getElementById("cpr").innerHTML = `${idieiEv.getFullYear()} Copyright: `
+        }
+    </script>
+
+    <style>
+        body {
+            caret-color: transparent;
+        }
+
+        .leirasContent li::marker,
+        .foresz {
+            font-size: 36px;
+        }
+
+        .leirasContent {
+            width: 99%;
+        }
+
+        .leirasContent li ol li::marker,
+        .kisresz {
+            color: red;
+            font-size: 24px;
+        }
+
+        .leirasContent li ul li::marker {
+            color: gray;
+        }
+
+        .leirasContent li::marker,
+        .foresz,
+        .fontos {
+            color: darkred;
+        }
+
+        p {
+            padding-left: 10px;
+        }
+
+        .contentUl li,
+        p,
+        img {
+            transition: 0.3s;
+        }
+
+        .foresz:hover,
+        .kisresz:hover,
+        .contentUl li:hover,
+        img:hover,
+        p:hover {
+            border-right: 3px solid lightgray;
+            border-bottom: 3px solid lightgray;
+            box-shadow: 4px 4px 10px 3px lightgray;
+        }
+
+        .foresz:hover {
+            font-size: 3em;
+        }
+
+        .kisresz:hover {
+            font-size: 2em;
+        }
+
+        p:hover,
+        .contentUl li:hover {
+            font-size: 1.5em;
+        }
+
+        .hibaUzenetek {
+            color: lightcoral;
+            padding-bottom: 15px;
+            list-style-type: circle;
+        }
+
+        img {
+            max-height: 500px;
+            max-width: 800px;
+        }
+
+        img:hover {
+            transform: scaleX(1.3) scaleY(1.3);
+        }
+
+        .leirasContent li {
+            padding-top: 25px;
+            margin-left: 40px;
+        }
+
+        .leirasContent li p {
+            max-width: fit-content;
+        }
+
+        .fontos {
+            list-style-position: inside;
+        }
+
+        .fontos,
+        .nullException,
+        a {
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 35px;
+        }
+
+        a {
+            color: darkblue;
+            text-decoration: none;
+        }
+        .kartyakepek{
+             margin-right: 0 !important; 
+        }
+    </style>
+</head>
+
+<body onload="copyrightTimer()">
+    <nav class="navbar sticky-top navbar-expand-sm bg-body-tertiary">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="https://en.wikipedia.org/wiki/Carcassonne_(board_game)">Carcassone</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            játék felületei és használata
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#foFelulet">Fő felület</a></li>
+                            <li><a class="dropdown-item" href="#hardwareIgeny">Hardware igény és elindítás</a></li>
+                            <li><a class="dropdown-item" href="#eredmenytabla">Eredménytábla</a></li>
+                            <li><a class="dropdown-item" href="#jatekmentese">Játék mentése</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Kártyák
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#kartyak">Kártyák</a></li>
+                            <li><a class="dropdown-item" href="#varak">Várak</a></li>
+                            <li><a class="dropdown-item" href="#utak">Utak</a></li>
+                            <li><a class="dropdown-item" href="#ret">Rét</a></li>
+                            <li><a class="dropdown-item" href="#templom">Templom</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Pontozási rendszer
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#pontozasirendszer">Pontozási rendszer</a></li>
+                            <li><a class="dropdown-item" href="#varakpontozasa">Várak pontozása</a></li>
+                            <li><a class="dropdown-item" href="#utakpontozasa">Utak pontozása</a></li>
+                            <li><a class="dropdown-item" href="#templompontozasa">Templomok pontozása</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Szabályok
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#szabalyok">Szabályok</a></li>
+                            <li><a class="dropdown-item" href="#lehelyezesiszabalyok">Lehelyezési szabályok</a></li>
+                            <li><a class="dropdown-item" href="#cel">A játék célja</a></li>
+                            <li><a class="dropdown-item" href="#menete">A játék menete</a></li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <ol class="leirasContent">
+        <li>
+            <p id="foFelulet" class="foresz ">A játék felületei és használata</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid mx-auto d-block" src="src/main.png" title="Az általános kezelő felület">
+                </div>
+                <div class="col-md-8">
+                    <p>A fő felület 2 részre osztható: a játék pályára és az alsó közlő felületre.</p>
+                    <p>A játék pálya egy 5*8-as felület, ami úgynevezett "Tile"-ökből épül fel. Egy "tile" egy kártya
+                        hely. Itt látja a játékos a játék jelenlegi állását.</p>
+                    <p>A játék pálya alatt bal lent látható a jelenlegi kártya ami a gép osztott a játékosnak, hogy
+                        lerakja. A jobb alsó sarokba a "Kilépés" és az "Eredménytábla" gombok találhatóak.</p>
+                    <p>A "Kilépés" gombot egy megerősítés után tudunk kilépni a játékból.</p>
+                    <p>Az "Eredménytábla" gomb megnyitja az eredménytábklát.</p>
+                </div>
+            </div>
+            <ol>
+                <li>
+                    <p id="hardwareIgeny" class="kisresz ">Hardware igény és elindítás</p>
+                    <p>A program hardware igénye alacsony, bármely gépen tud futni a program, amely windows 7 vagy attól
+                        újabb rendszert futtat és rendelkezik legalább a <a
+                            href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472">.NET Framework
+                            4.7.2</a>-es verziójával.</p>
+                    <p>A játék eindításához a játék ".exe" fájlát kell elindítani és betölt a játék.</p>
+                </li>
+
+
+                <li>
+                    <p id="eredmenytabla" class="kisresz ">Eredménytábla</p>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="img-fluid mx-auto d-block" src="src/leaderboard.png" title="Az eredménytábla">
+                        </div>
+                        <div class="col-md-10">
+                            <p>Az eredménytábla egy egyszerű kicsi felület ahol megtekinthetjük a korábban játszott
+                                játékok mentett eredményeit.</p>
+                            <p>Kettő oszlopból áll a tábla: "Név" és "Pont".</p>
+                            <p>A "Név" rész alatt a játékot játszott játékos neve, a "Pont" alatt az elért pontja
+                                látható.</p>
+                            <p>A táblát lehet rendezni legkisebbtől felfelé is, ha a "Pont" szóra rákatittunk.</p>
+                        </div>
+                    </div>
+                </li>
+
+
+                <li>
+                    <p id="jatekmentese" class="kisresz">Játék mentése</p>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p>Az elmentés felületen a játékos el tudja menteni a játszma pontjait.</p>
+                            <p>Ehhez meg kell adni a "Neve" mezőben a nevét majd a "Mentés gombra kattintva el is
+                                mentődik a pontja."</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img class="img-fluid mx-auto d-block" src="src/save.png" title="Az elmentés felület">
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </li>
+
+
+        <li>
+            <p id="kartyak" class="foresz ">Kártyák</p>
+            <p>A játék különféle kártyákból épül fel aminek mind más-más szerepe, képe, lerakási szabálya van.</p>
+
+            <ol>
+                <li>
+                    <p id="varak" class="kisresz ">Várak</p>
+                    <p>A játékban több fajta vár is található, ezek a következőek:</p>
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="img-fluid mx-auto d-block kartyakepek" src="src/castle3.png" title="Teljes vár" style="max-width: 200px;">
+                        </div>
+                        <div class="col-md-10">
+                            <p>A kártya teljes felülete vár ezért mind a négy irányba csak várat lehet rakni.</p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-10 kartyakepek" style="text-align: right; padding-left: 30%;">
+                            <p>A kártyát csak a bal oldala és az alja fejeződik be várral ezért ebbe a két irányba csak várat a másik két irányba meg rétet lehet rakni vagy olyan kártyát aminek az adott oldala rét.</p>
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img-fluid  d-block float-left kartyakepek" src="src/castle4.png" title="Balra és lent vár" style="max-width: 200px;">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="img-fluid mx-auto d-block kartyakepek" src="src/castle5.png" title="Jobb és lent vár" style="max-width: 200px;">
+                        </div>
+                        <div class="col-md-10">
+                            <p>A kártyát csak a jobb oldala és az alja fejeződik be várral ezért ebbe a két irányba csak várat a másik két irányba meg rétet lehet rakni vagy olyan kártyát aminek az adott oldala rét.</p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-10" style="text-align: right;  padding-left: 30%;">
+                            <p>A kártyának csak a felső részét nem zárja vár, így fentre olyan kártyát kell tenni aminek az alja rét, a többi oldalra vár szélű kártyákat kell rakni.</p>
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img-fluid float-left d-block kartyakepek" src="src/castle6.png" title="Csak fent nincs vár" style="max-width: 200px;">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="img-fluid mx-auto d-block kartyakepek" src="src/castle7.png" title="Csak jobbra van vár" style="max-width: 200px;">
+                        </div>
+                        <div class="col-md-10">
+                            <p>A kártyának a jobb széle csak vár ezért a jobb oldalára olyan kártyát kell rakni aminek a bal oldala vár. Minden más oldalra rét szélú kártya kell.</p>
+                        </div>
+                    </div>
+                </li>
+
+
+
+                <li>
+                    <p id="utak" class="kisresz ">Utak</p>
+                        <p>A játékban több fajta út is található, ezek a következőek:</p>
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img class="img-fluid mx-auto d-block kartyakepek" src="src/road1.png" title="Felfele meg lefele út" style="max-width: 200px;">
+                            </div>
+                            <div class="col-md-10">
+                                <p>Az út lefele és felfele megy tovább. Ezen két irányba út oldalú kártyát kell rakni a másik két irányba meg rét oldalú kártyát.</p>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-md-10 kartyakepek" style="text-align: right; padding-left: 30%;">
+                                <p>A kártya mind a négy irányába út megy, tehát minden oldalára út kártyával kell folytatni, szinte akármelyik út kártya rakható mellé ha üres a megfelelő oldal.</p>
+                            </div>
+                            <div class="col-md-2">
+                                <img class="img-fluid  d-block float-left kartyakepek" src="src/road2.png" title="Minden irányba út" style="max-width: 200px;">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img class="img-fluid mx-auto d-block kartyakepek" src="src/road4.png" title="Balra, jobbra és le út" style="max-width: 200px;">
+                            </div>
+                            <div class="col-md-10">
+                                <p>A kártyának három oldalát, a bal, a jobbés az alsó, út zárja, így ezekbe az irányokba csak út kártyával lehet folytatni. A kártya felé olyan kártya tehető, aminek rét az alja.</p>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-md-10" style="text-align: right;  padding-left: 30%;">
+                                <p>Az út jobbra és balra megy tovább. Ezen két irányba út oldalú kártyát kell rakni a másik két irányba meg rét oldalú kártyát lehet helyezni szabályosan.</p>
+                            </div>
+                            <div class="col-md-2">
+                                <img class="img-fluid float-left d-block kartyakepek" src="src/road5.png" title="Balra és jobbra út" style="max-width: 200px;">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img class="img-fluid mx-auto d-block kartyakepek" src="src/road6.png" title="Jobbra és le út" style="max-width: 200px;">
+                            </div>
+                            <div class="col-md-10">
+                                <p>A kártyának a jobb oldala és az alja út, így ebbe a két irányba úttal kell folytatni a kártyát. A teteje és a bal oldala réttel folytatható a játszma során.</p>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-md-10" style="text-align: right;  padding-left: 30%;">
+                                <p>A kártyának a bal oldala és a teteje út, így ebbe a két irányba úttal kell folytatni a kártyát. Az alja és a jobb oldala réttel folytatható a játszma során.</p>
+                            </div>
+                            <div class="col-md-2">
+                                <img class="img-fluid float-left d-block kartyakepek" src="src/road7.png" title="Balra és felfele út" style="max-width: 200px;">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img class="img-fluid mx-auto d-block kartyakepek" src="src/road8.png" title="Balra, jobbra és felele út" style="max-width: 200px;">
+                            </div>
+                            <div class="col-md-10">
+                                <p>A kártyának három oldalát, a bal, a jobb és a felső, út zárja, így ezekbe az irányokba csak út kártyával lehet folytatni. A kártya alá olyan kártya tehető, aminek rét az alja.</p>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-md-10" style="text-align: right;  padding-left: 30%;">
+                                <p>A kártyának a bal oldala és az alja út, így ebbe a két irányba úttal kell folytatni a kártyát. A teteje és a jobb oldala réttel folytatható a játszma során.</p>
+                            </div>
+                            <div class="col-md-2">
+                                <img class="img-fluid float-left d-block kartyakepek" src="src/road9.png" title="Balra és lefele út" style="max-width: 200px;">
+                            </div>
+                        </div>
+                </li>
+
+
+                <li>
+                    <p id="ret" class="kisresz ">Rét</p>
+                    <p>A játékban egy darab rét kártya található:</p>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="img-fluid mx-auto d-block kartyakepek" src="src/field1.png" title="Rét" style="max-width: 200px;">
+                        </div>
+                        <div class="col-md-10">
+                            <p>Minden oldala rét, csak rét oldalú kártya rakható mellé.</p>
+                        </div>
+                    </div>
+                </li>
+
+
+                <li>
+                    <p id="templom" class="kisresz ">Templom</p>
+                    <p>A játékban egy darab templom kártya található:</p>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="img-fluid mx-auto d-block kartyakepek" src="src/church1.png" title="Templom" style="max-width: 200px;">
+                        </div>
+                        <div class="col-md-10">
+                            <p>Minden oldala rét, csak rét oldalú kártya rakható mellé.</p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </li>
+
+
+
+        <li>
+            <p id="pontozasirendszer" class="foresz ">Pontozási rendszer</p>
+            <p>A pontozási rendszerben különféle kártyák különféle pontozással járnak, viszont a rétért ha csak le van téve nem jár pont.</p>
+            <ol>
+
+                <li>
+                    <p id="varakpontozasa" class="kisresz ">Várak pontozása</p>
+                    <p>A várak ha csak simán le vannak rakva darabonként 2 pontot érnek.</p>
+                    <P>Ha egy város "kész" van akkor az plusz 5 pont. Egy város akkor készül el, ha részeit teljesen, hiánytalanul, hézagok nélkül körbezárja egy vá-ros fal. Egy város tetszőleges számú városrészbôl(területkártyából) állhat.</P>
+                </li>
+
+                <li>
+                    <p id="utakpontozasa" class="kisresz ">Utak pontozása</p>
+                    <p>Lerakott utanként 1 pont adható, de befejezett útért 2 plusz pontot. Egy út akkor készül el, ha mindkét végét keresztezôdés, városrész vagykolostor zárja le - vagy visszatér önmagába, és ezzel körülzár egy területet. Amíg e feltételek valamelyikét nem teljesíti, az út tetszôleges számú szakasszal nyújtható.</p>
+                    
+                </li>
+
+                <li>
+                    <p id="templompontozasa" class="kisresz ">templom pontozása</p>
+                    <p>Egy templomért annyi pont adható amennyi lap van köré helyezve akár keresztbe is.</p>
+                </li>
+            </ol>
+        </li>
+
+
+        <li>
+            <p id="szabalyok" class="foresz ">Szabályok</p>
+            <p>Minden játák részei a szabályok ahogy itt is.</p>
+            <ol>
+                <li>
+                    <p id="lehelyezesiszabalyok" class="kisresz ">Lehelyezési szabályok</p>
+                    <p>A játék kijelöli a játékos számára hogy hova helyezheti le a kártyát, viszont egy kártya csak ugyanolyan oldalú kártyák mellé mehet, mint a dominóban.</p>
+                </li>
+                <li>
+                    <p id="cel" class="kisresz ">A játék célja</p>
+                    <p>A játék célja minél több pontot eléri a táblára helyezett kártyákból.</p>
+                </li>
+                <li>
+                    <p id="menete" class="kisresz ">A játék menete</p>
+                    <p>A játékot a gép által kisorsolt kártya lerakásával kell kezdeni, utána az újonnan kapott kártyákat kell tovább pakolni le ha lehetséges. Amennyiben nem lehetséges úgy a játék véget ért.</p>
+                </li>
+            </ol>
+        </li>
+    </ol>
+    <footer class="bg-light text-center text-lg-start">
+        <div class="text-center p-3">
+            <span id="cpr"></span>
+            <span class="nullException">NullException</span>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js "
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN "
+        crossorigin="anonymous "></script>
+</body>
+
+</html>
